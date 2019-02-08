@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+<meta charset="utf-8" />
+<title>Google</title>
+	<link rel="icon" href="https://www.google.com/s2/favicons?domain=www.google.com" />
+
+<link rel="stylesheet" href="style.css" />
+<script src="script.js"></script>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	font-family: arial;
+	font-size: 0.9em;
+}
+.main {
+	min-height: 100vh; /* 1 */
+	display: flex; /* 2 */
+	flex-direction: column; /* 3 */
+}
+section {
+	display: flex;
+	flex-grow: 1;
+	justify-content: top;
+	align-items: center;
+	padding-top: 70px;
+}
+nav {
+	display: flex;
+	justify-content: flex-end;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+nav ul li {
+	list-style: none;
+	padding: 10px;
+	justify-content: center;
+}
+.bottombar-left ul,  .bottombar-right ul, #geoloc ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 0px;
+}
+.bottombar-left ul li, .bottombar-right ul li, #geoloc ul li {
+	list-style: none;
+	padding: 10px;
+	justify-content: center;
+	
+}
+footer {
+	background-color: #F2F2F2;
+	color: #999;
+}
+	
+#bottombar {
+ display: flex;
+justify-content: space-between;
+padding: 1vh 2vw;
+background-color: #F2F2F2;
+color: #999;
+align-items: center;
+}
+
+#droite {
+	display: inline-flex;
+	flex-flow: row wrap;
+	 padding:0;
+  margin: 0;
+  list-style: none;
+}
+#gauche  {
+	display: inline-flex;
+	flex-flow: row wrap;
+	 padding:0;
+  margin: 0;
+  list-style: none;
+ 
+}
+#geoloc {
+	display: flex;
+	justify-content: flex-start;
+	border-bottom: 0.5px solid #ccc;
+}
+.connectbutton {
+	display: flex;
+	border: none;
+	background-color: #4285f4;
+	color: #FFF;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 4px;
+	justify-content: space-evenly;
+}
+.searchbutton {
+	border: none;
+	background-color: #F5F5F5;
+	color: #999;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 2px;
+	justify-content: space-evenly;
+}
+.search_b_container ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-evenly;
+}
+.search_b_container ul li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
+}
+#search_area {
+	display: flex;
+	flex-direction: column;
+	min-width: 30%;
+}
+#search_area input {
+	display: flex;
+	flex-direction: column;
+	box-shadow: -1px 2px 5px 1px rgba(0, 0, 0,
+0.4);
+	margin: 10px;
+	padding: 15px 20px;
+	border: none;
+	border-radius: 1px;
+}
+	#nav_picto{
+		
+		width: 30px;
+		height: 30px;
+background:url(pictonav.png) no-repeat;
+		background-color: transparent;
+background-position: -132px -38px;	}
+</style>
+</head>
+<body>
+<div class="main">
+  <nav>
+    <ul>
+      <li>Gmail</li>
+      <li>Images</li>
+      <li><div id="nav_picto"></div></li>
+      <li>
+        <input type="button" class="connectbutton" value="Connection" />
+      </li>
+    </ul>
+  </nav>
+  <section style="flex-direction: column;">
+    <div> <img src="https://www.google.fr/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+        style="max-width: 200px; min-width: 0; margin: 5px;" /> </div>
+    <div id="search_area">
+      <input type="" value="" />
+    </div>
+    <div class="search_b_container">
+      <ul>
+        <li> <span>
+          <input type="button" class="searchbutton" value="Recherche Google" />
+          </span> </li>
+        <li>
+          <input type="button" class="searchbutton" value="J&#39;ai de la chance" />
+        </li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+    <div id="geoloc">
+      <ul>
+        <li>France</li>
+      </ul>
+    </div>
+	      <div id="bottombar">
+
+       <div class="bottombar-left">
+        <ul id="gauche">
+          <li>Publicité</li>
+          <li>Entreprise</li>
+          <li>À propos</li>
+        </ul>
+		       </div>
+			  
+       <div class="bottombar-right">
+
+        <ul id="droite">
+          <li>Info consommateurs</li>
+          <li>Confidentialité</li>
+          <li>Conditions</li>
+          <li>Paramètres</li>
+        </ul>
+    		       </div>
+    </div>
+
+  </footer>
+</div>
+</body>
+</html>
