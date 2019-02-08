@@ -5,8 +5,7 @@
     content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
 <meta charset="utf-8" />
 <title>Google</title>
-	<link rel="icon" href="https://www.google.com/s2/favicons?domain=www.google.com" />
-
+<link rel="icon" href="https://www.google.com/s2/favicons?domain=www.google.com" />
 <link rel="stylesheet" href="style.css" />
 <script src="script.js"></script>
 <style>
@@ -16,6 +15,9 @@ body {
 	font-family: arial;
 	font-size: 0.9em;
 }
+	
+	form{display: flex;
+	flex-direction: column;}
 .main {
 	min-height: 100vh; /* 1 */
 	display: flex; /* 2 */
@@ -23,6 +25,7 @@ body {
 }
 section {
 	display: flex;
+	flex-direction: column;
 	flex-grow: 1;
 	justify-content: top;
 	align-items: center;
@@ -30,13 +33,15 @@ section {
 }
 nav {
 	display: flex;
-	justify-content: flex-end;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 10px 20px;
 }
 nav ul {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 }
 nav ul li {
@@ -44,7 +49,7 @@ nav ul li {
 	padding: 10px;
 	justify-content: center;
 }
-.bottombar-left ul,  .bottombar-right ul, #geoloc ul {
+.bottombar-left ul, .bottombar-right ul {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -52,40 +57,49 @@ nav ul li {
 	align-items: center;
 	margin: 0px;
 }
-.bottombar-left ul li, .bottombar-right ul li, #geoloc ul li {
+.bottombar-left ul li, .bottombar-right ul li {
 	list-style: none;
 	padding: 10px;
 	justify-content: center;
-	
+}
+	#geoloc ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content:space-between;
+	align-items:flex-start;
+	margin: 0px;
+}
+#geoloc ul li {
+	list-style: none;
+	padding: 10px 0;
+	justify-content: flex-start;
 }
 footer {
 	background-color: #F2F2F2;
 	color: #999;
 }
-	
 #bottombar {
- display: flex;
-justify-content: space-between;
-padding: 1vh 2vw;
-background-color: #F2F2F2;
-color: #999;
-align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 1vh 2vw;
+	background-color: #F2F2F2;
+	color: #999;
+	align-items: center;
 }
-
 #droite {
 	display: inline-flex;
 	flex-flow: row wrap;
-	 padding:0;
-  margin: 0;
-  list-style: none;
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
-#gauche  {
+#gauche {
 	display: inline-flex;
 	flex-flow: row wrap;
-	 padding:0;
-  margin: 0;
-  list-style: none;
- 
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 #geoloc {
 	display: flex;
@@ -112,11 +126,11 @@ align-items: center;
 	justify-content: space-evenly;
 }
 .search_b_container ul {
+	justify-content: center;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	display: flex;
-	justify-content: space-evenly;
 }
 .search_b_container ul li {
 	display: flex;
@@ -124,28 +138,31 @@ align-items: center;
 	justify-content: center;
 	margin: 20px;
 }
+	
 #search_area {
-	display: flex;
-	flex-direction: column;
-	min-width: 30%;
+	display: flex;  
+	min-width: 600px;
+	max-width: 60%;
 }
-#search_area input {
-	display: flex;
-	flex-direction: column;
+	
+#search_area input {flex: auto;
 	box-shadow: -1px 2px 5px 1px rgba(0, 0, 0,
 0.4);
 	margin: 10px;
 	padding: 15px 20px;
 	border: none;
 	border-radius: 1px;
+	  
+
 }
-	#nav_picto{
-		
-		width: 30px;
-		height: 30px;
-background:url(pictonav.png) no-repeat;
-		background-color: transparent;
-background-position: -132px -38px;	}
+#nav_picto {
+	width: 30px;
+	height: 30px;
+	background: url(pictonav.png) no-repeat;
+	background-color: transparent;
+	background-position: -132px -38px;
+}
+
 </style>
 </head>
 <body>
@@ -154,56 +171,67 @@ background-position: -132px -38px;	}
     <ul>
       <li>Gmail</li>
       <li>Images</li>
-      <li><div id="nav_picto"></div></li>
+      <li>
+        <div id="nav_picto"></div>
+      </li>
       <li>
         <input type="button" class="connectbutton" value="Connection" />
       </li>
     </ul>
   </nav>
-  <section style="flex-direction: column;">
-    <div> <img src="https://www.google.fr/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+	
+	
+	
+  <section>
+    <div class="logo"> <img src="https://www.google.fr/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
         style="max-width: 200px; min-width: 0; margin: 5px;" /> </div>
-    <div id="search_area">
-      <input type="" value="" />
-    </div>
-    <div class="search_b_container">
-      <ul>
-        <li> <span>
-          <input type="button" class="searchbutton" value="Recherche Google" />
-          </span> </li>
-        <li>
-          <input type="button" class="searchbutton" value="J&#39;ai de la chance" />
-        </li>
-      </ul>
-    </div>
+    
+	  <form class="example" action="#">
+      <div id="search_area">
+		  
+        <input type="text" id="text" />
+		  
+      </div>
+		  
+      <div class="search_b_container">
+        <ul>
+          <li> <span>
+            <input type="button" class="searchbutton" value="Recherche Google" />
+            </span> </li>
+          <li>
+            <input type="button" class="searchbutton" value="J&#39;ai de la chance" />
+          </li>
+        </ul>
+      </div>
+    </form>
   </section>
+	
+	
+	
+	
   <footer>
     <div id="geoloc">
       <ul>
         <li>France</li>
       </ul>
     </div>
-	      <div id="bottombar">
-
-       <div class="bottombar-left">
+    <div id="bottombar">
+      <div class="bottombar-left">
         <ul id="gauche">
           <li>Publicité</li>
           <li>Entreprise</li>
           <li>À propos</li>
         </ul>
-		       </div>
-			  
-       <div class="bottombar-right">
-
+      </div>
+      <div class="bottombar-right">
         <ul id="droite">
           <li>Info consommateurs</li>
           <li>Confidentialité</li>
           <li>Conditions</li>
           <li>Paramètres</li>
         </ul>
-    		       </div>
+      </div>
     </div>
-
   </footer>
 </div>
 </body>
